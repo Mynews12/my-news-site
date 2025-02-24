@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsWave | Modern News Platform</title>
+    <meta name="description" content="Stay updated with the latest news across technology, business, sports, and entertainment">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="NewsWave">
+    <meta property="og:description" content="Modern news platform for digital age">
+    <meta name="keywords" content="news, technology, business, sports, entertainment">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <!-- Styles -->
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --bg-color: #fff;
+        }
+
+        .dark-mode {
+            --text-color: #fff;
+            --bg-color: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
+        }
+
+        .header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+        }
+
+        .featured-article {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <div class="logo">NewsWave</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="themeToggle">🌓</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="featured-article">
+            <!-- Featured Content -->
+            <article>
+                <h1>Breaking News Title</h1>
+                <img src="placeholder.jpg" alt="News image" loading="lazy">
+                <p>News content...</p>
+                <div class="social-share">
+                    <button class="facebook">Share</button>
+                    <button class="twitter">Tweet</button>
+                </div>
+            </article>
+        </section>
+
+        <section id="categories">
+            <!-- Category Sections -->
+            <div class="category-filter">
+                <button data-category="all">All</button>
+                <button data-category="technology">Tech</button>
+                <button data-category="business">Business</button>
+            </div>
+            <div class="article-grid">
+                <!-- Dynamic articles will be inserted here -->
+            </div>
+        </section>
+
+        <section id="contact">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="email" name="email" required placeholder="Your Email">
+                <textarea name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <div class="newsletter">
+            <h3>Subscribe to our newsletter</h3>
+            <form id="newsletterForm">
+                <input type="email" required placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Mobile Menu
+        const mobileMenu = document.createElement('div');
+        mobileMenu.innerHTML = '☰';
+        document.querySelector('nav').appendChild(mobileMenu);
+
+        // Article Filtering
+        document.querySelectorAll('.category-filter button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+                // Filter articles logic
+            });
+        });
+
+        // Newsletter Submission
+        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add your newsletter service integration
+        });
+    </script>
+</body>
+</html>
